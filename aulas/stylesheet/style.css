@@ -1,0 +1,22 @@
+h1 {
+    color: blue;
+}
+#tit_1 {
+    font-size: 40px;
+
+}
+.noticias {
+    font-family: arial;
+}
+p {
+    font-size: 80px;
+    color: orangered;
+}
+p,h1,h2,h3,h4 {
+    background-color: gray;
+    padding: 10px;
+}
+.destaque {
+    color: blue;
+    font-weight: bold;
+}   
