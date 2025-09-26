@@ -20,3 +20,19 @@ p,h1,h2,h3,h4 {
     color: blue;
     font-weight: bold;
 }   
+#conteudo {
+    width: 70%;
+    background-color: blanchedalmond;
+    float: left;
+}
+#menu_contexto {
+    width: 30%;
+    background-color: lightgray;
+    clear: both;
+    float: left;
+}
+#rodapé {
+    clear: both;
+    text-align: center;
+}
+
