@@ -35,4 +35,20 @@ p,h1,h2,h3,h4 {
     clear: both;
     text-align: center;
 }
+ th {
+    background-color: gray;
+    color: white;
+ }
 
+td {
+        background-color: azure;
+ }
+
+ table {
+    width:100%
+ }
+ caption {
+    background-color: gray;
+    font-weight: bolder;
+    font-size: 30px;
+ }

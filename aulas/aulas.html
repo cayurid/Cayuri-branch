@@ -15,6 +15,34 @@
     <link rel="stylesheet" href="stylesheet/style.css">
 </head>
 <body>
+    <form action="aulas.html" method="post">
+        <fieldset>
+            <legend>Formulário de informações</legend>
+            Nome : <input type="text" name="Nome" required><br>
+            Email: <input type="email" name="Email" required><br>
+            data de nascimento: <input type="date" name="data de nascimento" required><br>
+            sexo: <br>
+            <input type="radio" name="sexo" value="feminino" required> Feminino<br>
+            <input type="radio" name="sexo" value="masculino" required> Masculino<br>
+            <input type="radio" name="sexo" value="outro" required> Outro<br>
+            </fieldset>
+            <fieldset>
+                <legend>Informações Adicionais</legend>
+                Telefone: <input type="tel" name="telefone"><br>
+                Endereço: <input type="text" name="endereco"><br>
+                Complemento: <input type="text" name="complemento"><br>
+                Cidade: <input type="text" name="cidade"><br>
+                Estado: <input type="text" name="estado"><br>
+                CEP: <input type="text" name="cep"><br>
+                Reclamações/Sugestões:<br>
+            <textarea name="reclamacoes" rows="10" cols="50">
+            </textarea>
+            
+            </fieldset>
+        
+            <input type="submit" value="Enviar">
+            <input type="reset" value="Limpar">
+    </form>
     <div id="cabeçalho">
         <ul>
             <li>sobre a empresa</li>
@@ -58,6 +86,29 @@
             <li>Para um sabor ainda mais intenso, adicione raspas de laranja à massa.</li>
             <li>Sirva o bolo com uma cobertura de glacê de laranja.</li>
         </ul>
+        <table> 
+            <caption>Valores Nutricionais</caption>
+            <thead>
+                <tr>
+                    <th>Comida</th>
+                    <th>Porção</th>
+                    <th>Calorias</th>
+                    <th>Carboidratos</th>
+                    <th>Proteínas</th>
+                    <th>Gorduras</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td rowspan="6">Bolo de Laranja</td>
+                    <td>1 fatia</td>
+                    <td>250</td>
+                    <td>35g</td>
+                    <td>5g</td>
+                    <td>10g</td>
+                </tr>
+            </tbody>
+        </table>
     </div>
         <div id="menu_contexto">
             <ul>
