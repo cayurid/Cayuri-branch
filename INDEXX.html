@@ -1,0 +1,35 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <title>Calculadora</title>
+    <script src="script.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+    <body>
+        <div>
+            <label for="operador1">Operador 1</label>
+            <input type="text" id="operador1">
+        </div>
+        <div>
+            <label for="operador2">Operador 2</label>
+            <input type="text" id="operador2">
+        </div>
+        <div>
+            <label for="resultado">Resultado</label>
+            <input type="text" id="resultado" disabled>
+        </div>
+        <br>
+      <div>
+            <button onclick="calcular('+')">+</button>
+            <button onclick="calcular('-')">-</button>
+            <button onclick="calcular('/')">/</button>
+            <button onclick="calcular('*')">*</button>
+            <button onclick="calcular('%')">%</button>
+            <button onclick="calcular('^')">^</button>
+            <button onclick="calcular('sqrt')">√</button>
+            <button onclick="limpar()">C</button>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="tela.css">
+    <script src="login.js"></script>
+</head>
+
+<body>
+    <main class="container">
+        <form>
+            <h1>Login do Bao</h1>
+            <div class="imputbox">
+                <input id="usuario" placeholder=" usuario" type="email">
+                <i class="bx bxs-user"></i>
+            </div>
+            <div class="imputbox">
+                <input id="senha" placeholder=" senha" type="password">
+                <i class="bx bxs-lock-alt"></i>
+            </div>
+            <div class="remember-forgot">
+                <label>
+                    <input type="checkbox">
+                    Lembrar senha
+                </label>
+                <a href="#">Esqueci a senha</a>
+            </div>
+            <button id="login-button" type="submit" class="login">login</button>
+            </div>
+            <div class="register">
+                <p>Não tem uma conta? <a href="#" id="register-link">Registrar</a></p>
+            </div>
+        </form>
+    </main>
+    <script>
+        // Função para cadastrar e-mail
+        function cadastrarEmail(email) {
+            let emails = JSON.parse(localStorage.getItem('emailsValidos') || "[]");
+            if (!emails.includes(email)) {
+                emails.push(email);
+                localStorage.setItem('emailsValidos', JSON.stringify(emails));
+                alert("E-mail cadastrado com sucesso!");
+            } else {
+                alert("E-mail já cadastrado!");
+            }
+        }
+
+        // Exemplo de uso: chame esta função ao clicar em "Registrar"
+        document.getElementById('register-link').addEventListener('click', function (e) {
+            e.preventDefault();
+            const email = prompt("Digite seu e-mail para cadastro:");
+            // Validação simples de e-mail
+            const emailValido = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+            if (emailValido) {
+                cadastrarEmail(email);
+            } else {
+                alert("Digite um e-mail válido!");
+            }
+        });
+
+        // No login, verifique no localStorage
+        document.querySelector('form').addEventListener('submit', function (e) {
+            e.preventDefault();
+            const usuario = document.getElementById('usuario').value;
+            const emails = JSON.parse(localStorage.getItem('emailsValidos') || "[]");
+            const emailValido = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(usuario);
+
+            if (!emailValido) {
+                alert("Digite um e-mail válido!");
+                return;
+            }
+
+            if (emails.includes(usuario)) {
+                window.location.href = "https://www.youtube.com/";
+            } else {
+                alert("E-mail não cadastrado!");
+            }
+        });
+    </script>
+</body>
+
+</html>
