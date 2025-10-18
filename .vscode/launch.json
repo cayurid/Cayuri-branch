@@ -2,14 +2,25 @@
   "version": "0.2.0",
   "configurations": [
     {
+      "name": ".NET Launch (console)",
+      "type": "coreclr",
+      "request": "launch",
+      "preLaunchTask": "build",
+      "program": "${workspaceFolder}/ConsoleApp2/bin/Debug/net9.0/ConsoleApp2.dll",
+      "args": [],
+      "cwd": "${workspaceFolder}/ConsoleApp2",
+      "stopAtEntry": false,
+      "console": "integratedTerminal"
+    },
+    {
       "name": "C/C++ Runner: Debug Session",
       "type": "cppdbg",
       "request": "launch",
       "args": [],
       "stopAtEntry": false,
       "externalConsole": true,
-      "cwd": ".",
-      "program": "build/Debug/outDebug",
+      "cwd": "c:/Users/Clovis/Desktop/Programas Cayuri faculdade/atividades/Cayuri-branch/ConsoleApp2",
+      "program": "c:/Users/Clovis/Desktop/Programas Cayuri faculdade/atividades/Cayuri-branch/ConsoleApp2/build/Debug/outDebug",
       "MIMode": "gdb",
       "miDebuggerPath": "gdb",
       "setupCommands": [
