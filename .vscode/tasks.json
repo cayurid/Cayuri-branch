@@ -1,16 +1,38 @@
 {
-	"version": "2.0.0",
-	"tasks": [
-		{
-			"type": "cmake",
-			"label": "CMake: build",
-			"command": "build",
-			"targets": [
-				"[N/A - Selecionar Kit]"
-			],
-			"group": "build",
-			"problemMatcher": [],
-			"detail": "Tarefa do modelo CMake build"
-		}
-	]
+  "version": "2.0.0",
+  "tasks": [
+    {
+      // 🔷 Build automático para C# (.NET)
+      "label": "build",
+      "command": "dotnet",
+      "type": "process",
+      "args": [
+        "build",
+        "${workspaceFolder}/ConsoleApp2/ConsoleApp2.csproj"
+      ],
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      },
+      "problemMatcher": "$msCompile"
+    },
+    {
+      // 🔶 Build automático para C/C++
+      "label": "build-cpp",
+      "type": "shell",
+      "command": "g++",
+      "args": [
+        "${file}",
+        "-o",
+        "${fileDirname}/a.out"
+      ],
+      "group": {
+        "kind": "build",
+        "isDefault": false
+      },
+      "problemMatcher": [
+        "$gcc"
+      ]
+    }
+  ]
 }
