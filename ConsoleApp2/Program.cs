@@ -311,7 +311,7 @@ class MainClass
     } 
 }
 */
-using System;
+
 
 /*
 
@@ -358,9 +358,9 @@ class MainClass
     }
 }
 */
-/*
+
 // aqui e usando o while para atingir 10 repetições
-using System;
+/*using System;
 
 class MainClass
 {
@@ -426,7 +426,7 @@ class MainClass
     }
 }
 
-*/
+
 using System;
 class MainClass
 {
@@ -436,16 +436,16 @@ class MainClass
         int nota = 0;
         int aprovados = 0, reprovados = 0;
 
-        for (int i = 1; i <= 5; i++) 
+        for (int i = 1; i <= 5; i++)
         {
             Console.WriteLine($"\nAluno {i} de 5:");
-            
+
             Console.Write("Digite o nome do aluno: ");
             nome = Console.ReadLine() ?? "";
-            
+
             Console.Write($"Digite a nota do aluno {nome}: ");
             nota = int.Parse(Console.ReadLine() ?? "0");
-            
+
             if (nota >= 60)
             {
                 aprovados++;
@@ -457,13 +457,231 @@ class MainClass
                 Console.WriteLine($"{nome} foi REPROVADO com nota {nota}");
             }
         }
-        
+
         Console.WriteLine($"\nResultado final:");
         Console.WriteLine($"{aprovados} alunos foram aprovados e {reprovados} foram reprovados");
         Console.Write("\nPressione qualquer tecla para sair...");
         Console.ReadKey();
-     }
+    }
 
 }
+*/
+// modularização : melhora a visibilizade  do codigo e eprmite utlizar aquela parte novamente
+// procedimento n retorna valor
+// funções retorna valores
+// em liguages orientadas as modularização e chamada de metodo. Tem duas formas as que retornam valores e as que n retornam valores
+/*
+sintaxe de um metodo com valor de  função
+tipo_retorno nome_metodo (<lista de parametros>)
+{
+ comando1;
+ comando2;
+ ...
+ comandon;
+ return valor_retornado
+}
+// void  retorna um valor
+void nome_metodo (<lista de parametros>)
+{
+ comando1;
+ comando2;
+ ...
+ comandon;
+}
+// escopo
+variaveis declaradas dentro de um metodo ou proceidmento so pode ser usada dentro deles, assim que fechar-los ela some
+*/
+
+
+
+// Static void e função n retorna valor
+// static int,double,bool etc e função retorna valor
+/*
+
+// 1 demonstra como e o procedimento, segundo mostra como seria a função, no 1 temos que usar o console para retornar valor
+// no segundo apenar o return ja faz isso 
+
+static void procMax(int a, int b) 
+{
+    if (a > b)
+    Console.WriteLine($"{a} é maior que {b}");
+    else
+    Console.WriteLine($"{b} é maior que (ou igual a) {a}");
+}
+static int Max(int a, int b) 
+{
+    int maior;
+     if (a > b)
+    maior = a;
+     else
+    maior = b;
+    return maior;
+}
+public static void Main (string[] args)
+ {
+     int v1 = 13, v2 = 38;
+      procMax(v1, v2);
+     int resultado = 100 - Max(v1, v2);
+      Console.WriteLine($"100 - {Max(v1, v2)} = {resultado}");
+ }
+}
+
+
+
+
+// jeito maior
+
+static int Max(int a, int b) {
+int maior;
+if (a > b)
+maior = a;
+else
+maior = b;
+return maior;
+}
+
+//jeito pratico
+
+static int Max_v2(int a, int b) {
+if (a > b)
+return a;
+else
+return b;
+}
+
+//usando operador ternario
+
+static int Max_v3(int a, int b) {
+return (a > b)? a : b;
+}
+
+using System;
+
+class MainClass {
+  static void procSoma(int a, int b)
+  {
+    int S;
+    S = a + b;
+    Console.WriteLine($"A soma entre {a} e {b} = {S}.");
+  }
+
+  static int funcSoma(int a, int b)
+  {
+    int S;
+    S = a + b;
+    return S;
+  }
+
+  static int funcSoma_v2(int a, int b)
+  {
+    return a + b;
+  }
+
+  static void procMax(int a, int b)
+  {
+    if (a > b)
+      Console.WriteLine($"{a} é maior que {b}");
+    else
+      Console.WriteLine($"{b} é maior que (ou igual a) {a}");
+  }
+
+  static int Max(int a, int b)
+  {
+    int maior;
+    if (a > b)
+      maior = a;
+    else
+      maior = b;
+    return maior;
+  }
+
+  static int Max_v2(int a, int b)
+  {
+    if (a > b)
+      return a;
+    else
+      return b;
+  }
+
+  static int Max_v3(int a, int b)
+  {
+    return (a > b)? a : b;
+  }
+
+  static int Min(int a, int b)
+  { 
+    return (a < b)? a : b;
+  }
+
+  static int Diferenca(int a, int b)
+  {
+    return Max(a, b) - Min(a, b);
+  }
+
+
+    public static void Main(string[] args)
+    {
+        int v1 = 13, v2 = 38;
+        procSoma(v1, v2);
+        Console.WriteLine($"{v1} + {v2} = {funcSoma(v1, v2)}");
+
+        procMax(v1, v2);
+        int resultado = 100 - Max(v1, v2);
+        Console.WriteLine($"100 - {Max(v1, v2)} = {resultado}");
+
+        Console.WriteLine($"A diferença entre {v1} e {v2} = {Diferenca(v1, v2)}");
+        Console.WriteLine($"A diferença entre {v2} e {v1} = {Diferenca(v2, v1)}");
+        Console.ReadKey();
+    }
+  
+}
+
+
+// append  eum paranmetro booleano  e determina como um arquivo existente  será  aberto para escrita.
+//por padrão o append e igual a false, 
+//false ele  trunc ao arquivo
+//true ele mantem e novas gravações são mantidas no final do arquivo
+// StreamWriter Sw = new StreamWriter("text.txt", true);
+//           |
+// matem os dados  e adiciona  no final  os novos dados
+//
+// StreamWriter Sw = new StreamWriter("text.txt") - false
+//    |
+//  ele considera como false vai apagar os arquivos, pq ta sem o true dentro do txt (path) 
+//
+// Stream Reader, Stream writer
+using System;
+using System.IO;
+
+namespace ExemploSR01
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            // Abrindo arquivo para gravação
+            StreamReader arquivo = new StreamReader(@"C:\temp\arq.txt");
+
+            string? linha = arquivo.ReadLine();
+            while (linha != null)
+            {
+                Console.WriteLine(linha);
+                linha = arquivo.ReadLine();
+            }
+            arquivo.Close();
+            Console.ReadKey();
+        }
+    }
+}
+
+
+
+
+*/
+    
+
+
+
+
 
 
