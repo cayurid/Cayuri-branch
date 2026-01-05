@@ -64,4 +64,35 @@ int main(){
     // espaço entre os %c desconsidera o enter, tab e espaço.
     // fflush (); so vale em windowns
    }
-    */
+
+   int main () {
+
+    char a,b;
+
+
+    printf ("Digite uma letra: ");
+    scanf (" %c", &a);
+
+    printf ("Digite uma letra: ");
+    scanf (" %c", &b);
+     
+    printf ("Primeira letra: %c\nSegunda letra: %c\n", a, b);
+
+    return 0;
+
+    }
+
+   //aula 16
+   int main () {
+    float x = 1.0;
+
+    printf(" Tamanho de um float na memoria: %d bytes\n", sizeof (x));
+
+    printf("tamanho em memoria de um int: %d bytes\n", sizeof (int));
+    // 4 * 8 = 32
+
+
+   return 0;
+
+   }
+   */

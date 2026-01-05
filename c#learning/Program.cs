@@ -38,6 +38,9 @@ class MainClass
 
 // estrada de Dados 
 using System;
+using System.Diagnostics.CodeAnalysis;
+using System.IO;
+
 class MainClass
 {
     public static void Main(string[] args)
@@ -105,6 +108,7 @@ class MainClass
     }
 }
 
+/*
 using System;
 
 class MainClass {
