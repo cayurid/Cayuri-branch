@@ -2,46 +2,16 @@
   "version": "0.2.0",
   "configurations": [
     {
-      "name": ".NET Launch (ConsoleApp2)",
-      "type": "coreclr",
-      "request": "launch",
-      "preLaunchTask": "build",
-      "program": "${workspaceFolder}/ConsoleApp2/bin/Debug/net9.0/ConsoleApp2.dll",
-      "args": [],
-      "cwd": "${workspaceFolder}/ConsoleApp2",
-      "stopAtEntry": false,
-      "console": "externalTerminal"
-    },
-    {
-      "name": "C/C++ Debug (External Terminal)",
+      "name": "C Debug",
       "type": "cppdbg",
       "request": "launch",
-      "program": "${workspaceFolder}/a.out",
+      "program": "${fileDirname}/${fileBasenameNoExtension}.exe",
       "args": [],
       "stopAtEntry": false,
-      "cwd": "${workspaceFolder}",
+      "cwd": "${fileDirname}",
+      "environment": [],
       "externalConsole": true,
-      "MIMode": "gdb",
-      "miDebuggerPath": "gdb"
-    },
-    {
-      "name": "C/C++ Runner: Debug Session",
-      "type": "cppdbg",
-      "request": "launch",
-      "args": [],
-      "stopAtEntry": false,
-      "externalConsole": true,
-      "cwd": "c:/Users/Clovis/Desktop/Programas Cayuri faculdade/atividades/Cayuri-branch/ConsoleApp2",
-      "program": "c:/Users/Clovis/Desktop/Programas Cayuri faculdade/atividades/Cayuri-branch/ConsoleApp2/build/Debug/outDebug",
-      "MIMode": "gdb",
-      "miDebuggerPath": "gdb",
-      "setupCommands": [
-        {
-          "description": "Enable pretty-printing for gdb",
-          "text": "-enable-pretty-printing",
-          "ignoreFailures": true
-        }
-      ]
+      "MIMode": "gdb"
     }
   ]
 }

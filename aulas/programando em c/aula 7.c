@@ -96,3 +96,19 @@ int main(){
 
    }
    */
+   // Aula 17 operador short para  o tipo de int  intervalo: -33.768  ate 32.767 %d ou %hi
+    
+   int main{
+
+
+    short int x = 32767;
+    int y = 0;
+    
+    printf("tamanho de um int na memoria: %d bytes \n", sizeof y);
+    printf("tamanho de short na memoria: %d bytes \n", sizeof x);
+
+
+
+
+    return 0;
+   }
